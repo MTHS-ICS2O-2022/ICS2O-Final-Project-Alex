@@ -51,6 +51,11 @@ var checkDiagonal2WinO = 0
 
 //Top Right Square
 function topRight() {
+
+  //Lock
+  if (lockSquare3 == 1) {
+    console.log("Square Locked")
+  }
   
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare3 != 1) {
@@ -90,6 +95,11 @@ function topRight() {
 
 //Top Left Square
 function topLeft() {
+
+  //Lock
+  if (lockSquare1 == 1) {
+    console.log("Square Locked")
+  }
   
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare1 != 1) {
@@ -129,6 +139,11 @@ function topLeft() {
 
 //Top Middle Square
 function topMiddle() {
+
+  //Lock
+  if (lockSquare2 == 1) {
+    console.log("Square Locked")
+  }
   
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare2 != 1) {
@@ -166,6 +181,11 @@ function topMiddle() {
 
 //Middle left square
 function middleLeft() {
+
+  //Lock
+  if (lockSquare4 == 1) {
+    console.log("Square Locked")
+  }
   
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare4 != 1) {
@@ -190,10 +210,10 @@ function middleLeft() {
   }
 
   //Win check
-  if (checkRow2WinX == 3 || checkColumn2WinX == 3) {
+  if (checkRow2WinX == 3 || checkColumn1WinX == 3) {
   document.getElementById("output").innerHTML = "X Wins"
   }
-  else if (checkRow2WinO == 3 || checkColumn2WinO == 3) {
+  else if (checkRow2WinO == 3 || checkColumn1WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
   }
 }
@@ -204,8 +224,13 @@ function middleLeft() {
 //Middle square
 function middle() {
 
+  //Lock
+  if (lockSquare5 == 1) {
+    console.log("Square Locked")
+  }
+    
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare5 != 1) {
+  else if (xTurn == 1 && lockSquare5 != 1) {
     document.getElementById("middle").innerHTML = '<td class="middle" id="middle" onclick="middle()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -245,6 +270,11 @@ function middle() {
 //Middle Right Square
 function middleRight() {
 
+  //Lock
+  if (lockSquare6 == 1) {
+    console.log("Square Locked")
+  }
+
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare6 != 1) {
     document.getElementById("middle-right").innerHTML = '<td class="middle-right" id="middle-right" onclick="middleRight()"> X </td>'
@@ -263,7 +293,7 @@ function middleRight() {
     //To change turn, lock the square, and adds to check counter
     xTurn = 1
     lockSquare6 = 1
-    checkRow2WinO + 1
+    checkRow2WinO++
     checkColumn3WinO++
   }
 
@@ -281,6 +311,11 @@ function middleRight() {
 
 //Bottom left Square functions
 function bottomLeft() {
+
+  //Lock
+  if (lockSquare7 == 1) {
+    console.log("Square Locked")
+  }
 
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare7 != 1) {
@@ -321,6 +356,11 @@ function bottomLeft() {
 //Bottom middle square function
 function bottomMiddle() {
 
+  //Lock
+  if (lockSquare8 == 1) {
+    console.log("Square Locked")
+  }
+
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare8 != 1) {
     document.getElementById("bottom-middle").innerHTML = '<td class="bottom-middle" id="bottom-middle" onclick="bottomMiddle()"> X </td>'
@@ -357,6 +397,11 @@ function bottomMiddle() {
 
 //Bottom right square Function
 function bottomRight() {
+
+  //Lock
+  if (lockSquare9 == 1) {
+    console.log("Square Locked")
+  }
 
   //Displays X and adds to the check counter
   if (xTurn == 1 && lockSquare9 != 1) {
