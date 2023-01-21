@@ -26,6 +26,7 @@ var lockSquare6 = 0
 var lockSquare7 = 0
 var lockSquare8 = 0
 var lockSquare9 = 0
+var lockAll = 0
 
 //Variables for checking for a win in a row
 var checkRow1WinX = 0
@@ -49,16 +50,19 @@ var checkDiagonal1WinO = 0
 var checkDiagonal2WinX = 0
 var checkDiagonal2WinO = 0
 
+
+
+
 //Top Right Square
 function topRight() {
 
   //Lock
-  if (lockSquare3 == 1) {
+  if (lockSquare3 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
   
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare3 != 1) {
+  else if (xTurn == 1 && lockSquare3 != 1) {
     document.getElementById("top-right").innerHTML = '<td class="top-right" id="top-right" onclick="topRight()"> X </td>'
     
     //To change turn, lock the square, and adds to check counter
@@ -67,6 +71,7 @@ function topRight() {
     checkRow1WinX++
     checkColumn3WinX++
     checkDiagonal2WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -79,14 +84,20 @@ function topRight() {
     checkRow1WinO++
     checkColumn3WinO++
     checkDiagonal2WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow1WinX == 3 || checkColumn3WinX == 3 || checkDiagonal2WinX == 3) {
   document.getElementById("output").innerHTML = "X wins"
+    lockAll = 9
   }
   else if (checkRow1WinO == 3 || checkColumn3WinO == 3 || checkDiagonal2WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -97,12 +108,12 @@ function topRight() {
 function topLeft() {
 
   //Lock
-  if (lockSquare1 == 1) {
+  if (lockSquare1 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
   
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare1 != 1) {
+  else if (xTurn == 1 && lockSquare1 != 1) {
     document.getElementById("top-left").innerHTML = '<td class="top-right" id="top-left" onclick="topLeft()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -111,6 +122,7 @@ function topLeft() {
     checkRow1WinX++
     checkColumn1WinX++
     checkDiagonal1WinX++
+    lockAll++
   }
     
   //Displays O and adds to the check counter
@@ -123,14 +135,20 @@ function topLeft() {
     checkRow1WinO++
     checkColumn1WinO++
     checkDiagonal1WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow1WinX == 3 || checkColumn1WinX == 3 || checkDiagonal1WinX == 3) {
   document.getElementById("output").innerHTML = "X Wins"
+    lockAll = 9
   }
   else if (checkRow1WinO == 3 || checkColumn1WinO == 3 || checkDiagonal1WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -141,12 +159,12 @@ function topLeft() {
 function topMiddle() {
 
   //Lock
-  if (lockSquare2 == 1) {
+  if (lockSquare2 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
   
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare2 != 1) {
+  else if (xTurn == 1 && lockSquare2 != 1) {
     document.getElementById("top-middle").innerHTML = '<td class="top-middle" id="top-middle" onclick="topMiddle()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -154,6 +172,7 @@ function topMiddle() {
     lockSquare2 = 1
     checkRow1WinX++
     checkColumn2WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -165,14 +184,20 @@ function topMiddle() {
     lockSquare2 = 1
     checkRow1WinO++
     checkColumn2WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow1WinX == 3 || checkColumn2WinX == 3) {
   document.getElementById("output").innerHTML = "X Wins"
+    lockAll = 9
   }
   else if (checkRow1WinO == 3 || checkColumn2WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -183,12 +208,12 @@ function topMiddle() {
 function middleLeft() {
 
   //Lock
-  if (lockSquare4 == 1) {
+  if (lockSquare4 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
   
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare4 != 1) {
+  else if (xTurn == 1 && lockSquare4 != 1) {
     document.getElementById("middle-left").innerHTML = '<td class="middle-left" id="middle-left" onclick="middleLeft()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -196,6 +221,7 @@ function middleLeft() {
     lockSquare4 = 1
     checkRow2WinX++
     checkColumn1WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -207,14 +233,20 @@ function middleLeft() {
     lockSquare4 = 1
     checkRow2WinO++
     checkColumn1WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow2WinX == 3 || checkColumn1WinX == 3) {
   document.getElementById("output").innerHTML = "X Wins"
+    lockAll = 9
   }
   else if (checkRow2WinO == 3 || checkColumn1WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -225,7 +257,7 @@ function middleLeft() {
 function middle() {
 
   //Lock
-  if (lockSquare5 == 1) {
+  if (lockSquare5 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
     
@@ -240,6 +272,7 @@ function middle() {
     checkColumn2WinX++
     checkDiagonal1WinX++
     checkDiagonal2WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -253,14 +286,20 @@ function middle() {
     checkColumn2WinO++
     checkDiagonal1WinO++
     checkDiagonal2WinO++
+    lockAll++
   }
   
   //Win check
   if (checkRow2WinX == 3 || checkColumn2WinX == 3 || checkDiagonal2WinX == 3 || checkDiagonal1WinX == 3) {
   document.getElementById("output").innerHTML = "X Wins"
+    lockAll = 9
   }
   else if (checkRow2WinO == 3 || checkColumn2WinO == 3 || checkDiagonal2WinO == 3 || checkDiagonal1WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -271,12 +310,12 @@ function middle() {
 function middleRight() {
 
   //Lock
-  if (lockSquare6 == 1) {
+  if (lockSquare6 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
 
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare6 != 1) {
+  else if (xTurn == 1 && lockSquare6 != 1) {
     document.getElementById("middle-right").innerHTML = '<td class="middle-right" id="middle-right" onclick="middleRight()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -284,6 +323,7 @@ function middleRight() {
     lockSquare6 = 1
     checkRow2WinX++
     checkColumn3WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -295,14 +335,20 @@ function middleRight() {
     lockSquare6 = 1
     checkRow2WinO++
     checkColumn3WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow2WinX == 3 || checkColumn3WinX == 3) {
   document.getElementById("output").innerHTML = "X Wins"
+    lockAll = 9
   }
   else if (checkRow2WinO == 3 || checkColumn3WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -313,12 +359,12 @@ function middleRight() {
 function bottomLeft() {
 
   //Lock
-  if (lockSquare7 == 1) {
+  if (lockSquare7 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
 
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare7 != 1) {
+  else if (xTurn == 1 && lockSquare7 != 1) {
     document.getElementById("bottom-left").innerHTML = '<td class="bottom-left" id="bottom-left" onclick="bottomLeft()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -327,6 +373,7 @@ function bottomLeft() {
     checkRow3WinX++
     checkColumn1WinX++
     checkDiagonal2WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -339,14 +386,20 @@ function bottomLeft() {
     checkRow3WinO++
     checkColumn1WinO++
     checkDiagonal2WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow3WinX == 3 || checkColumn1WinX == 3 || checkDiagonal2WinX == 3) {
   document.getElementById("output").innerHTML = "X wins"
+    lockAll = 9
   }
   else if (checkRow3WinO == 3 || checkColumn1WinO == 3 || checkDiagonal2WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -357,12 +410,12 @@ function bottomLeft() {
 function bottomMiddle() {
 
   //Lock
-  if (lockSquare8 == 1) {
+  if (lockSquare8 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
 
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare8 != 1) {
+  else if (xTurn == 1 && lockSquare8 != 1) {
     document.getElementById("bottom-middle").innerHTML = '<td class="bottom-middle" id="bottom-middle" onclick="bottomMiddle()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -370,6 +423,7 @@ function bottomMiddle() {
     lockSquare8 = 1
     checkRow3WinX++
     checkColumn2WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -381,14 +435,20 @@ function bottomMiddle() {
     lockSquare8 = 1
     checkRow3WinO++
     checkColumn2WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow3WinX == 3 || checkColumn2WinX == 3) {
   document.getElementById("output").innerHTML = "X wins"
+    lockAll = 9
   }
   else if (checkRow3WinO == 3 || checkColumn2WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
 
@@ -399,12 +459,12 @@ function bottomMiddle() {
 function bottomRight() {
 
   //Lock
-  if (lockSquare9 == 1) {
+  if (lockSquare9 == 1 || lockAll == 9) {
     console.log("Square Locked")
   }
 
   //Displays X and adds to the check counter
-  if (xTurn == 1 && lockSquare9 != 1) {
+  else if (xTurn == 1 && lockSquare9 != 1) {
     document.getElementById("bottom-right").innerHTML = '<td class="bottom-right" id="bottom-right" onclick="bottomRight()"> X </td>'
 
     //To change turn, lock the square, and adds to check counter
@@ -413,6 +473,7 @@ function bottomRight() {
     checkRow3WinX++
     checkColumn3WinX++
     checkDiagonal1WinX++
+    lockAll++
   }
 
   //Displays O and adds to the check counter
@@ -425,13 +486,19 @@ function bottomRight() {
     checkRow3WinO++
     checkColumn3WinO++
     checkDiagonal1WinO++
+    lockAll++
   }
 
   //Win check
   if (checkRow3WinX == 3 || checkColumn3WinX == 3 || checkDiagonal1WinX == 3) {
   document.getElementById("output").innerHTML = "X wins"
+    lockAll = 9
   }
   else if (checkRow3WinO == 3 || checkColumn3WinO == 3 || checkDiagonal1WinO == 3) {
     document.getElementById("output").innerHTML = "O wins"
+    lockAll = 9
+  }
+  else if (lockAll == 9) {
+  document.getElementById("output").innerHTML = "Draw"
   }
 }
