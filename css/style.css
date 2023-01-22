@@ -1,0 +1,116 @@
+/* Created by: Alex Nelson
+* Created on: Jan 2022
+* This file contains the CSS for index.html
+*/
+
+/* Center Header */
+.mdl-layout__header-row {
+  align-items: center;
+  justify-content: center;
+}
+
+/* All elements stay slightly away frome the side */
+.mdl-layout__content {
+  padding-left: 15pt;
+  padding-right: 15pt;
+  padding-top: 15pt;
+}
+
+/* Due to error in MDL : https://github.com/google/material-design-lite/issues/5281
+*/
+.mdl-ripple {
+  background: #000;
+  opacity: 0.001;
+}
+
+/* Body color */
+body {
+  background-color: pink;
+}
+
+/* Style for text */
+p {
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-top: 15pt;
+}
+
+/* Images go to the right */
+img {
+  float: right;
+  margin-right: 15px;
+}
+
+/* Style for the square sizess */
+td {
+  width: 100px;
+  height: 100px;
+}
+
+table {
+  margin: 5px auto;
+}
+
+/* Style for top middle square */
+.top-middle {
+  font-size: 1000%;
+}
+
+/* Style for middle square */
+.middle {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1000%;
+}
+
+/* Style for top right square */
+.top-right {
+  border-left: 2px solid black;
+  font-size: 1000%;
+}
+
+/* Style for top left square */
+.top-left {
+  border-right: 2px solid black;
+  font-size: 1000%;
+}
+
+/* Style for middle left square */
+.middle-left {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  font-size: 1000%;
+}
+
+/* Style for middle right square */
+.middle-right {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  font-size: 1000%;
+}
+
+/* Style for bottom right square */
+.bottom-right {
+  border-left: 2px solid black;
+  font-size: 1000%;
+}
+
+/* Style for bottom middle square */
+.bottom-middle {
+  font-size: 1000%;
+}
+
+/* Style for bottom left square */
+.bottom-left {
+  border-right: 2px solid black;
+  font-size: 1000%;
+}
+
+.output {
+  font-size: 200%;
+  color: lime;
+}
