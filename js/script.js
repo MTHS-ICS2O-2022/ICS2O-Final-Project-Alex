@@ -502,3 +502,70 @@ function bottomRight() {
   document.getElementById("output").innerHTML = "Draw"
   }
 }
+
+function restart() {
+
+//Reset top squares
+  document.getElementById("top-left").innerHTML = '<td class="top-left" id="top-left" onclick="topLeft()"></td>'
+  
+  document.getElementById("top-right").innerHTML = '<td class="top-right" id="top-right" onclick="topRight()"></td>'
+  
+  document.getElementById("top-middle").innerHTML = '<td class="top-middle" id="top-middle" onclick="topMiddle()"></td>'
+
+
+//Reset middle squares
+  document.getElementById("middle-left").innerHTML = '<td class="middle-left" id="middle-left" onclick="middleLeft()"></td>'
+  
+  document.getElementById("middle-right").innerHTML = '<td class="middle-right" id="middle-right" onclick="middleRight()"></td>'
+  
+  document.getElementById("middle").innerHTML = '<td class="middle" id="middle" onclick="middle()"></td>'
+
+
+//Reset bottom squares
+  document.getElementById("bottom-left").innerHTML = '<td class="bottom-left" id="bottom-left" onclick="bottomLeft()"></td>'
+  
+  document.getElementById("bottom-right").innerHTML = '<td class="bottom-right" id="bottom-right" onclick="bottomRight()"></td>'
+  
+  document.getElementById("bottom-middle").innerHTML = '<td class="bottom-middle" id="bottom-middle" onclick="bottomMiddle()"></td>'
+
+
+//Reset output
+  document.getElementById("output").innerHTML = ""
+
+//turn variable
+ xTurn = 1
+
+//Variables to lock each square
+ lockSquare1 = 0
+ lockSquare2 = 0
+ lockSquare3 = 0
+ lockSquare4 = 0
+ lockSquare5 = 0
+ lockSquare6 = 0
+ lockSquare7 = 0
+ lockSquare8 = 0
+ lockSquare9 = 0
+ lockAll = 0
+
+//Variables for checking for a win in a row
+ checkRow1WinX = 0
+ checkRow1WinO = 0
+ checkRow2WinX = 0
+ checkRow2WinO = 0
+ checkRow3WinX = 0
+ checkRow3WinO = 0
+
+//Variables for checking for a win in a column
+ checkColumn1WinX = 0
+ checkColumn1WinO = 0
+ checkColumn2WinX = 0
+ checkColumn2WinO = 0
+ checkColumn3WinX = 0
+ checkColumn3WinO = 0
+
+//Variables for checking for a win in a column
+ checkDiagonal1WinX = 0
+ checkDiagonal1WinO = 0
+ checkDiagonal2WinX = 0
+ checkDiagonal2WinO = 0
+}
